@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Valles</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="acad.html">Academic Achievements</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="shopfest.html">Shopfest 2025</a></div>
+                <div class="link active" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="selling.html">Selling Week</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="certificates.html">Seminars & Certificates</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="acad.html">Academic Achievements</a>
+                <a href="shopfest.html">Shopfest 2025</a>
+                <a href="selling.html">Selling Week</a>
+                <a href="certificates.html">Seminars & Certificates</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="selling" class="selling-section">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+      
+    <h2 class="section-title" data-aos="zoom-in" data-aos-duration="1000">
+      Selling Week
+    </h2>
+
+    <div class="selling-content">
+      <h3>Delights in the Box - Fruit Sushi Business </h3>
+      <h4>Category: Dessert</h4>
+
+      <p>
+        Our team introduced a unique take on the dessert scene with Fruit Sushi, blending traditional Filipino flavors into a fun, accessible treat. Each box offers a delightful assortment of flavors, perfect for sharing or enjoying on your own. We aimed to create a memorable experience that brings a taste of local culture to your day.
+      </p>
+
+      <blockquote class="selling-quote">
+       "Delights in the Box: Where every bite is a burst of Filipino sweetness, crafted with love and perfect for any occasion."
+      </blockquote>
+    </div>
+
+   <!-- Photo Gallery -->
+<div class="selling-gallery" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+  <div class="gallery-item">
+    <img src="images/sw1.jpg" alt="Selling Showcase 1" onclick="openLightbox(this)">
+  </div>
+  <div class="gallery-item">
+    <img src="images/sw2.jpg" alt="Selling Showcase 2" onclick="openLightbox(this)">
+  </div>
+  <div class="gallery-item">
+    <img src="images/sw3.jpg" alt="Selling Showcase 3" onclick="openLightbox(this)">
+  </div>
+  <div class="gallery-item">
+    <img src="images/sw4.jpg" alt="Selling Showcase 4" onclick="openLightbox(this)">
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="Full View">
+</div>
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+    <script>
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(0px)"
+        }
+        function cancel(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(-500px)"
+        }
+    </script>
+
+<script>
+  function openLightbox(img) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = img.src;
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Valles</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="acad.html">Academic Achievements</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="shopfest.html">Shopfest 2025</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="selling.html">Selling Week</a></div>
+                <div class="link active" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="certificates.html">Seminars & Certificates</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="acad.html">Academic Achievements</a>
+                <a href="shopfest.html">Shopfest 2025</a>
+                <a href="selling.html">Selling Week</a>
+                <a href="certificates.html">Seminars & Certificates</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+  <section class="certificates-section">
+    <h1 class="section-title" data-aos="fade-down" data-aos-duration="1000">
+      <span>Seminars & Certifications</span>
+    </h1>
+
+    <!-- Go Negosyo -->
+    <div class="acad-block" data-aos="fade-up" data-aos-duration="1000">
+      <h2>Volunteered in Go Negosyo (2025)</h2>
+      <div class="acad-photos">
+        <img src="images/1.jpg" alt="Go Negosyo 1" onclick="openLightbox(this)">
+        <img src="images/2.jpg" alt="Go Negosyo 2" onclick="openLightbox(this)">
+        <img src="images/3.jpg" alt="Go Negosyo 2" onclick="openLightbox(this)">
+      </div>
+    </div>
+
+    <!-- VMDC Straight Forward -->
+    <div class="acad-block" data-aos="fade-up" data-aos-duration="1000">
+      <h2>Visual Merchandising Design Competition – Collaborated with Straight Forward (2025)</h2>
+      <div class="acad-photos">
+        <img src="images/4.jpg" alt="VMDC 1" onclick="openLightbox(this)">
+        <img src="images/5.jpg" alt="VMDC 2" onclick="openLightbox(this)">
+        <img src="images/6.jpg" alt="VMDC 2" onclick="openLightbox(this)">
+        <img src="images/7.jpg" alt="VMDC 2" onclick="openLightbox(this)">
+      </div>
+    </div>
+
+    <!-- Philippine Franchise Association -->
+    <div class="acad-block" data-aos="fade-up" data-aos-duration="1000">
+      <h2>Philippine Franchise Association: Introduction to Franchising (2024)</h2>
+      <div class="acad-photos">
+        <img src="images/8.jpg" alt="Franchise 1" onclick="openLightbox(this)">
+        <img src="images/9.jpg" alt="Franchise 2" onclick="openLightbox(this)">
+      </div>
+    </div>
+
+    <!-- JEBC -->
+    <div class="acad-block" data-aos="fade-up" data-aos-duration="1000">
+      <h2>JEBC General Assembly: "Hybrid Professionals: Preparing Resilient & Empowered Future Business Leaders" (2022)</h2>
+    </div>
+
+    <!-- eVersity Section -->
+    <div class="acad-block" data-aos="fade-up" data-aos-duration="1000">
+      <h2>"eVersity" Programs</h2>
+      <ul class="acad-list">
+        <li>International Market and Business Forecasting (2024–2025)</li>
+        <li>Create Workplace Policies and Procedures for Sustainability (2023–2024)</li>
+        <li>Build Critical Thinking in Others with Emotional Intelligence (2023–2024)</li>
+        <li>Continuous Improvement Management (2022–2023)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Full View">
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset:0 });
+
+    function hamburg(){
+      const navbar = document.querySelector(".dropdown")
+      navbar.style.transform = "translateY(0px)"
+    }
+    function cancel(){
+      const navbar = document.querySelector(".dropdown")
+      navbar.style.transform = "translateY(-500px)"
+    }
+
+    function openLightbox(img) {
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightbox-img").src = img.src;
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+</body>
+</html>

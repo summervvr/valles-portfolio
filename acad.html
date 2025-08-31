@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Valles</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="acad.html">Academic Achievements</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="shopfest.html">Shopfest 2025</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="selling.html">Selling Week</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="certificates.html">Seminars & Certificates</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="acad.html">Academic Achievements</a>
+                <a href="shopfest.html">Shopfest 2025</a>
+                <a href="selling.html">Selling Week</a>
+                <a href="certificates.html">Seminars & Certificates</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Academic Achievements Section -->
+  <section id="acad" class="acad-section">
+    <div class="acad-container">
+      <h1 class="section-title" data-aos="fade-down" data-aos-duration="1000">
+        Academic <span>Achievements</span>
+      </h1>
+      <p class="acad-intro" data-aos="fade-up" data-aos-duration="1000">
+        A showcase of my milestones in Senior High School and College.
+      </p>
+
+      <!-- Senior High -->
+      <div class="acad-block">
+        <h2 data-aos="fade-right" data-aos-duration="1000">Senior High School</h2>
+        <ul class="acad-list" data-aos="fade-up" data-aos-duration="1000">
+          <li>Grade 11 - <strong>With High Honors</strong></li>
+          <li>Grade 12 - <strong>With High Honors</strong></li>
+          <li>Delivered a <strong>Recognition Speech</strong> for achieving the highest grade in GAS.</li>
+        </ul>
+        <div class="acad-photos" data-aos="zoom-in" data-aos-duration="1000">
+          <img src="images/aa1.jpg" alt="Certificate" onclick="openLightbox(this)">
+          <img src="images/aa2.jpg" alt="Certificate" onclick="openLightbox(this)">
+          <img src="images/aa3.jpg" alt="Recognition" onclick="openLightbox(this)">
+          <img src="images/aa4.jpg" alt="Recognition" onclick="openLightbox(this)">
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="acad-divider" data-aos="fade-in" data-aos-duration="800">
+
+      <!-- College -->
+      <div class="acad-block">
+        <h2 data-aos="fade-left" data-aos-duration="1000">College</h2>
+        <ul class="acad-list" data-aos="fade-up" data-aos-duration="1000">
+          <li><strong>ShopFest Selling Week Awards (2025)</strong>
+            <ul>
+              <li>1st Place - Best in Poster</li>
+              <li>3rd Place - Best in Reel</li>
+            </ul>
+          </li>
+          <li><strong>Product Management Project (2024)</strong> – Earned Top 3 for marketing and selling <em>“Delights in the Box”</em> in a business simulation.</li>
+        </ul>
+        <div class="acad-photos" data-aos="zoom-in" data-aos-duration="1000">
+          <img src="images/college.jpg" alt="Award" onclick="openLightbox(this)">
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img">
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({offset:0});</script>
+  <script>
+    function hamburg(){document.querySelector(".dropdown").style.transform = "translateY(0px)";}
+    function cancel(){document.querySelector(".dropdown").style.transform = "translateY(-500px)";}
+
+    function openLightbox(img) {
+      var lightbox = document.getElementById("lightbox");
+      var lightboxImg = document.getElementById("lightbox-img");
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+</body>
+</html>
